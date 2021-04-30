@@ -1,0 +1,4 @@
+﻿  _7week_project.cpp
+C:\Users\swjang\source\repos\_7week_project\_7week_project\_7week_project.cpp(99): warning C4715: 'AppleSeller::SaleApples': 모든 제어 경로에서 값을 반환하지는 않습니다.
+C:\Users\swjang\source\repos\_7week_project\_7week_project\_7week_project.cpp(153): warning C4715: 'BananaSeller::SaleApples': 모든 제어 경로에서 값을 반환하지는 않습니다.
+  _7week_project.vcxproj -> C:\Users\swjang\source\repos\_7week_project\Debug\_7week_project.exe

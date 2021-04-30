@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+    <body id = "hello">
+        <h2 class = "hi">
+            <div class = "me">
+            </div>
+        </h2>
+    </body>
+
+    <script>
+        let me = document.querySelector('.me');
+
+        let hi = me.closest('.hi');
+        let hello = me.closest('#hello');
+
+        window.alert(me + " " + hi + " " + hello);
+    </script>
+</html>

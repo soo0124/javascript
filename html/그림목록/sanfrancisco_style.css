@@ -1,0 +1,56 @@
+body {
+  width: 1535px;
+  margin: 0 auto;
+}
+.picture_book {
+  width: 1535px;
+  position: relative;  
+}
+.items {
+  /* width: 1175px; */
+  overflow-x: scroll;
+  overflow-y: hidden;
+  position: relative;
+  white-space: nowrap;
+  transition: all 0.3s ease-in-out;
+}
+.item {
+  display: inline-block;
+  margin-right: 10px;
+	margin-left: 0;
+	background: white; 
+	border: 1px solid #ddd;
+}
+.item:last-child {
+  margin-right: 0;
+}
+.item img {
+  width: 500px;
+  height: 350px;
+}
+.title {
+  padding: 5px 20px;
+}
+.picture-btn-left {
+	left: -32px;
+}
+.picture-btn-right {
+	right: -12px;
+}
+.picture-btn {
+  width: 24px;
+  position: absolute;
+  top: 40%;
+  z-index: 1;
+}
+.pic-btn {
+  border: 1px solid #ddd;
+  color: buttontext;
+  cursor: pointer;
+  display: block;
+  font-size: 30px;
+}
+.pic-btn svg{
+  width: 24px;
+  height: 24px;
+} 

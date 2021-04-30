@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>TAB Sample</title>
+    <link rel="stylesheet" href="tabstyle.css">
+  </head>
+  <body>
+    <h1>태양계 설명</h1>
+    <div class="tabs">
+      <ul>
+        <li><a href="#Mercury">수성</a></li>
+        <li><a href="#Venus">금성</a></li>
+        <li><a href="#Earth">지구</a></li>
+        <li><a href="#Mars">화성</a></li>
+      </ul>
+      <div class="tab_content">
+        <div id="Mercury">
+          <h3>수성</h3>
+          <p>태양에서 가장 가까이 있는 행성인 수성은 언제나 태양 옆에 붙어 다니기 때문에 관측하기가 쉽지 않다. 수성은 해가 진 직후 서쪽 하늘과, 해가 뜨기 직전 동쪽 하늘에서만 볼 수가 있다. 그리고 망원경으로 수성을 보면 달과 같이 그 위상이 변하는 것을 알 수 있다.표면의 모습도 달과 매우 비슷하다.</p>
+        </div>
+        <div id="Venus">
+          <h3>금성</h3>
+          <p>금성은 우리가 흔히 '샛별'이라고 부르는 행성으로 해 뜨기 전 동쪽 하늘이나 해진 후 서쪽 하늘에서 보인다. 금성은 그냥 보면 하나의 점처럼 보이지만, 망원경으로 보면 달처럼 그 모습이 변하는 위상을 가지고 있다. 금성의 대기는 두꺼운 이산화탄소로 덮여 있기 때문에 망원경으로는 표면이 보이지 않는다. 그래서 파장이 긴 전파를 이용해 관측하고 있다.</p>
+        </div>
+        <div id="Earth">
+          <h3>지구</h3>
+          <p>지구의 나이는 약 46억 년이라고 알려져 있다. 원시 지구는 태양 주위의 미행성들이 뭉쳐져서 탄생한 것으로추측하고 있다. 탄생 직후의 지구는 고온의 마그마 바다였으나 미행성의 충돌이 잠잠해지면서 냉각하기 시작하여 얇은 지각이 형성된다. 이산화탄소가 주성분이었던 원시 대기에 비가 내림으로써 바다가 형성되고, 이산화탄소가 바다에 녹아 하늘이 맑아진다.약 35억 년에서 25억 년 전쯤에는 지표의 온도가 현재 온도와 가까워졌고 지구 환경도 안정기에 접어든다. 그리고 35억 년 전 비로소 지구에 원시 생명이 탄생한다. 이것이 과학자들이 추측하는 지구 탄생의 이야기다.</p>
+        </div>
+  
+        <div id="Mars">
+          <h3>화성</h3>
+          <p>화성은 영화와 소설의 소재로도 많이 사용되는, 태양계 행성 중 우리의 관심을 가장 많이 끈 행성이다. 지구에 가까이 있고, 여러 가지 에피소드에 의해 생명의 존재 가능성이 제기되어 신비감과 공포감을 동시에 가져다준 행성이 바로 화성이다. 이러한 관심은 마리너 6, 7, 8, 9호, 바이킹 1, 2호 등 많은 우주선들의 화성 탐사로 이어졌으며, 그 결과 제2의 지구, 화성에 대한풍부한 자료를 확보함으로써 화성 연구에 많은 진척을 가져왔다.</p>
+        </div>  
+      </div>
+    </div>
+  </body>
+  <script>
+    function createTabs(selector) { // selector (.tabs div class 이름을 받음)
+      const el = document.querySelector(selector); //queryselector 해당, 매개변수의 요소를 불러온다. (tabs를 el에 넣는다.)
+      const liEls = el.querySelectorAll('ul li');  //ul li안에 있는 요소들을 넣음 (el(tabs)의 ul li를) 위에 탭을 삽입
+      const tabContentEl = el.querySelector('.tab_content');  //설명에 대한내용을 변수 tabContentEl 을 삽입
+      const firstTabEl = liEls.item(0).firstElementChild;   //수성, 금성, 지구, 화성의 첫번째 값을 first변수로 삽입
+    
+      function activate(target) { //target은 탭 클릭을 뜻함
+        // alert(target.hash);  
+        const hash = target.hash; //target의 hash(태그),li의 href값을 넣어줌 hash에
+        const anchors =
+          target.closest('ul').querySelectorAll('li a');  //anchors = target 조상의 ul
+        
+        // 모든 탭 className Clear & display = 'none' 으로 보이지 않게 처리
+        Array.from(anchors)
+          .forEach(v => v.className = '');  //anchors의 배열을 생성 (새로운 인스턴스)
+        Array.from(tabContentEl.children)
+          .forEach(v => v.style.display = 'none');  //초기값 이외의 다른 탭을 눌렀을떄, 초기화를 시켜줌 (탭클릭 변경에 따른 블록 초기값세팅)
+        
+        // 선택된 TAB 활성화
+        tabContentEl.querySelector(hash).style.display = 'block'; //클릭 되있는 것을 표현
+        target.className = 'active';  //active라는 css를 넣어줌 (target의 dom 을 건드린것.) classn
+      }
+    
+      const handleHash = () => {  
+         //alert(location.hash + "ㅎㅎㅎ");
+        if (location.hash) { //
+          const selector = `a[href="${location.hash}"]`; //해쉬정보를 selector에 넣어줌.
+          activate(document.querySelector(selector));    //activate에 selector 정보 넣어줌 
+        } else {  //가장 초기값 '수성'으로 체크 되있는것.
+          activate(firstTabEl);
+        }
+      }
+    
+      window.addEventListener('hashchange', handleHash);
+      
+      handleHash();
+    }
+    
+    createTabs('.tabs');
+    </script>
+</html>

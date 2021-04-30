@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>HTML5</title>
+
+        <script>
+            function init()
+            {
+                console.log('1111111111111');
+                ctx = document.getElementById("canvas").getContext('2d');
+                ctx.save();
+                dologo();
+            }
+
+            function dologo()
+            {
+                ctx.fillStyle = "#E34C26";
+                ctx.beginPath();
+                ctx.moveTo(17,0);
+                ctx.lineTo(262, 0);
+                ctx.lineTo(239, 250);
+                ctx.lineTo(139, 278);
+                ctx.lineTo(39, 250);
+                ctx.lineTo(17, 0);
+                ctx.fill();
+                ctx.closePath();
+
+                ctx.fillStyle = "#F06529";
+                ctx.beginPath();
+                ctx.moveTo(139,20);
+                ctx.lineTo(139,257);
+                ctx.lineTo(220,234);
+                ctx.lineTo(239,20);
+                ctx.lineTo(139,20);
+                ctx.fill();
+                ctx.closePath();
+
+                ctx.fillStyle = "#EBEBEB";
+                ctx.beginPath();
+                ctx.moveTo(62,51);
+                ctx.lineTo(139,51);
+                ctx.lineTo(139,82);
+                ctx.lineTo(96,82);
+                ctx.lineTo(98,113);
+                ctx.lineTo(139,113);
+                ctx.lineTo(139,144);
+                ctx.lineTo(70,144);
+                ctx.moveTo(62,51);
+                ctx.fill();
+                ctx.closePath();
+
+                ctx.fillStyle = "#EBEBEB";
+                ctx.beginPath();
+                ctx.moveTo(72,159);
+                ctx.lineTo(103,159);
+                ctx.lineTo(105,184);
+                ctx.lineTo(139,193);
+                ctx.lineTo(139,225);
+                ctx.lineTo(76,207);
+                ctx.lineTo(72,159);
+                ctx.fill();
+                ctx.closePath();
+
+                ctx.fillStyle = "#FFFFFF";
+                ctx.beginPath();
+                ctx.moveTo(139,51);
+                ctx.lineTo(216,51);
+                ctx.lineTo(213,82);
+                ctx.lineTo(139,82);
+                ctx.fill();
+                ctx.closePath();
+
+
+                ctx.fillStyle = "#FFFF";
+                ctx.beginPath();
+                ctx.moveTo(139,113);
+                ctx.lineTo(210,113);
+                ctx.lineTo(202,207);
+                ctx.lineTo(139,225);
+                ctx.lineTo(139,193);
+                ctx.lineTo(173,184);
+                ctx.lineTo(177,144);
+                ctx.lineTo(139,144);
+                ctx.fill();
+                ctx.closePath();
+
+
+            }
+        </script>
+
+    </head>
+
+    <body onLoad="init();">
+        
+        <canvas id="canvas" width="600" height="400">
+        </canvas>
+    </body>
+
+</html>

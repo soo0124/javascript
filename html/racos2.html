@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>RACOS</title>
+    </head>
+
+    <body>
+        <h1><a >RACOS System</a></h1>
+
+        <p>고객에게는 최상의 안전성과 편리성을, 
+            관리자에겐 최고의 효율성을 제공.</p>
+
+        <ol>
+            <li><a id="CMS" href="#" >CMS 버튼</a></li>       
+            <li><a id="RCS" href="#" >RCS 버튼</a></li>
+            <li><a id="RMS" href="#" >RMS 버튼</a></li>
+        </ol>
+        <h2 id="location">Location</h2>
+
+        <p id="address">서울특별시 중구 청구로6길 32</p>
+    </body>
+
+    <script>
+
+        var button = document.querySelector("ol");
+        button.addEventListener("click", one_click());
+        
+        
+        function one_click (event){
+            console.log(event);
+            switch (event.path[0].id){
+                case "CMS":
+                          cms_click();
+                    break;
+
+                case "RCS":
+                        rcs_click();
+                    break;
+
+                case "RMS":
+                        rms_click();
+                    break;
+            }
+        }
+
+        function cms_click() {
+            document.getElementById("location").innerHTML = "카드키시스템";
+            document.getElementById("address").innerHTML = "카드키시스템입니다~~~~~~~~";
+        }
+
+        function rcs_click() {
+            document.getElementById("location").innerHTML = "객실관리시스템";
+            document.getElementById("address").innerHTML = "객실관리시스템입니다~~~~~~~~";
+        }
+
+        function rms_click() {
+            document.getElementById("location").innerHTML = "기숙사시스템";
+            document.getElementById("address").innerHTML = "기숙사시스템입니다~~~~~~~~";
+        }
+    </script>
+
+    
+</html>

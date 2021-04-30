@@ -1,0 +1,60 @@
+/* "태양계 설명"  문서 제목을 h1으로 한다. */
+h1 {
+	width: 500px;
+	margin: 0 auto;
+}
+/* 제목을 제외한 탭 내부의 모든을 <div>로 묶은 후 class 이름을 tabs로 명명한다. */
+.tabs {
+	width: 520px;
+	margin: 0 auto;
+    padding: 0;
+}
+/* 수성, 금성, 지구, 화성 4개의 행성 이름을 <ul> 태스로 처리하고 그 리스트가 세로가 아니라 가로로 나오는 의미를 이해한다. */
+.tabs ul {
+	height: 80px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+/* <ul> 내부에 각 행성의 이름을 <li> 처리하여 리스트업 한다. */
+.tabs li {	
+	float: left;
+	width: 130px;
+}
+/* <li>로 처리된 각 리스트에 대해 anchor, <a> 태그에 href 속성으로 링크를 건다. */
+/* href 속성값으로는 각 행성의 상세정보 표현에 id를 지정하고 그 id를 href 속성값으로 지정한다. */
+.tabs li a {
+	position: relative;
+	display: block;
+	height: 30px;
+	margin-top: 40px;
+	padding: 10px 0 0 0;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 18px;
+	text-align: center;	
+	text-decoration: none;
+	color: white;
+	background: #aaa;
+    border-right: 1px solid #ddd;	
+}
+/* 상기 <a>에 대해 마우스가 올라가면 표현하는 hovering 처리를 한다. */
+.tabs li a:hover {
+	margin: 35px 0 0 0;
+	padding: 10px 0 5px 0;
+}
+/* 상기 <a>에 대해 active 처리를 한다. */
+.tabs li a.active {
+	margin: 30px 0 0 0;
+	padding: 10px 0 10px 0;
+	background: #555;
+	color: yellowgreen;
+}
+/* 각 탭이 선택된 후 표시될 각 행성의 상세 정보에 대해 포맷팅한다. */
+.tab_content {
+  height: 400px;
+  color: #ffffff;
+  background: #555;
+  line-height: 26px;
+  font-size: 18px;
+  padding: 2px 10px;
+}

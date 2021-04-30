@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<title>JavaScript 실습</title>
+</head>
+
+<body>
+
+    <form>
+        <div id="space">
+            <input type="button" value="길이" onclick="add_textbox()">
+            <input type="button" value="계산" onclick="add1_textbox()">
+            <input type="button" value="요일" onclick="add2_textbox()"><br>
+
+            글자:<input type="text" size="80" id="box1"><br>
+            <p id="result1">글자길이:</p><br>
+
+            숫자:<input type="text" size="80" id="box2"><br>
+            숫자:<input type="text" size="80" id="box3"><br>
+            <p id="result2">곱하기: </p><br>
+
+            날짜:<input type="date" size="80" id="box4"><br>
+            <p id="result3">요일: </p><br>
+
+            
+            <script>
+                
+                function add_textbox(){
+                    var box01 = document.getElementById("box1").value;
+                    document.getElementById("result1").innerHTML = box01.length;
+                }
+                
+                function add1_textbox(){
+                    var box02 = Number(document.getElementById("box2").value);
+                    var box03 = Number(document.getElementById("box3").value);
+
+                    console.log(typeof box02);
+                    var gop = box02 * box03;
+                    
+                    document.getElementById("result2").innerHTML = gop;
+                }
+
+                function add2_textbox() {
+                    var box04 = document.getElementById("box4").value;
+                    var dayday = new Date(box04);
+                    var day;
+                    switch(dayday.getDay()){
+                        case 0:
+                            day = "일요일";
+                            break;
+
+                        case 1:
+                            day = "월요일";
+                            break;
+
+                        case 2:
+                            day = "화요일";
+                            break;
+
+                        case 3:
+                            day = "수요일";
+                            break;
+
+                        case 4:
+                            day = "목요일";
+                            break;
+
+                        case 5:
+                            day = "금요일";
+                            break;
+                        
+                        case 6:
+                            day = "토요일";
+                            break;
+    
+                    }
+                    document.getElementById("result3").innerHTML = day;
+                }
+            </script>
+        </div>
+
+    </form>
+    
+
+</body>
+
+</html>
+

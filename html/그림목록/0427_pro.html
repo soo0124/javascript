@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="UTF-8">
+    <title>샌프란시스코 여행</title>
+    <link rel="stylesheet" href="sanfrancisco_style.css">
+  </head>
+
+  <body>
+      <h1>샌프란시스코</h1>
+      <div class="picture_book" >
+    
+            <div class="picture-btn picture-btn-left">
+                <button id = "left-btn" class = "pic-btn">
+                    &larr;
+                </button>
+            </div>
+
+            <div class="items">
+                <div class="item">
+                    <img src="alcatraz.jpg">
+                    <h2>알카트라즈</h2>
+                    <p>알카트라즈~~~~~</p>
+                </div>
+                
+                <div class="item">
+                    <img src="atnt.jpg">
+                    <h2>AT&T 파크</h2>
+                    <P>에이티 앤 티 파크</P>
+                </div>
+                
+                <div class="item">
+                    <img src="buenavista.jpg">
+                    <h2>부에니스타카페</h2>
+                    <p>부에니스타카페~~</p>
+                </div>
+                
+                <div class="item">
+                    <img src="coit.jpg">
+                    <h2>코이트</h2>
+                    <p>코이트~</p>
+                </div>
+
+                <div class="item">
+                    <img src="crabhouse.jpg">
+                    <h2>크랩 하우스</h2>
+                    <p>크랩하우스~~</p>
+                </div>
+                
+                <div class="item">
+                    <img src="fisherman.jpg">
+                    <h2>피셔맨</h2>
+                    <p>피셔맨~~~</p>
+                </div>
+
+                <div class="item">
+                    <img src="goldengate.jpg">
+                    <h2>골든게이트</h2>
+                    <p>골든게이트~~</p>
+                </div>
+                
+                <div class="item">
+                    <img src="innout.jpg">
+                    <h2>인앤아웃</h2>
+                    <p>인앤아웃~</p>
+                </div>
+                
+                <div class="item">
+                    <img src="lombard.jpg">
+                    <h2>롬바드</h2>
+                    <p>롬바드~</p>
+                </div>
+                
+                <div class="item">
+                    <img src="pier39.jpg">
+                    <h2>피어39</h2>
+                </div>
+
+                <div class="item">
+                    <img src="stanford.jpg">
+                    <h2>스탬포드</h2>
+                    <p>스탬포드~</p>
+                </div>
+                
+                <div class="item">
+                    <img src="unionsquare.jpg">
+                    <h2>유니온스퀘어</h2>
+                    <p>유니온스쿠에ㅓ~</p>
+                </div>
+
+                <div class="item">
+                    <img src="yosemite.jpg">
+                    <h2>요세미티</h2>
+                    <p>요세미니~~~~ㅓ~</p>
+                </div>
+            </div>
+
+            <div class="picture-btn picture-btn-right">
+                <button id = "right-btn" class = "pic-btn">
+                    &rarr;
+                </button>
+            </div>
+
+        </div>
+  </body>
+
+  <script>
+      var items_width = document.querySelector('.items')
+      var left = document.getElementById("left-btn");
+      var right = document.getElementById("right-btn");
+      left.addEventListener('click', leftmove);
+      right.addEventListener('click', rightmove);
+
+      function leftmove() {
+        items_width.scrollLeft -= 510;
+        
+          //window.alert("hhh");
+      }
+
+      function rightmove() {
+        items_width.scrollLeft += 510;
+        //if(items_width.scrollLeft >= 1535) items_width.scrollLeft = 0;
+      }
+  </script>
+
+</html>

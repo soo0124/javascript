@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Show Menu</title>
+    <link rel="stylesheet" href="0426_css.css">
+  </head>
+  <body>
+      <button id="menu-button" value="show" href="#" onclick="_click()">show menu</button>
+      <div id="menu">
+          <h2>Slide Menu</h2>
+          <ul>
+              <li>Menu 1</li>
+              <li>Menu 2</li>
+          </ul>
+      </div>
+  </body>
+  <script>
+        
+
+        function _click (){
+            var value_ = document.getElementById("menu-button").value;
+            const slide = document.getElementById('menu'); 
+
+            if(value_ === "show"){
+                //document.getElementById("menu-button").innerHTML = "Hide Menu";
+                document.getElementById("menu-button").value = "hide";
+                
+                slide.style.transform = 'translate(0px)';
+                slide.style.background = 'blue';
+            }
+            else 
+            {
+                //document.getElementById("menu-button").innerHTML = "Show Menu";
+                document.getElementById("menu-button").value = "show";
+                
+                slide.style.transform = 'translate(320px)';
+                slide.style.background = 'red';
+            }
+            
+        }
+  </script>
+</html>
